@@ -20,7 +20,6 @@ import cundi.edu.co.registro.exception.AuthException;
 
 
 @Configuration
-
 @EnableResourceServer
 public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
 
