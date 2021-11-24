@@ -25,7 +25,7 @@ public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
 
 	//Trae todo lo que configuramos en el SecurityConfig
 	@Autowired
-	private ResourceServerTokenServices tokenServices
+	private ResourceServerTokenServices tokenServices;
 	
 	
     @Value("${security.jwt.resource-ids}")
@@ -47,7 +47,7 @@ public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
                 .and()
                 .authorizeRequests()                  
                 .antMatchers("/autores/**" ).authenticated()
-                .antMatchers("/autorEditorial/**" ).authenticated()
+                .antMatchers("/autorEditorial/**" ).permitAll()
                 .antMatchers("/editoriales/**" ).authenticated()
                 .antMatchers("/libros/**" ).authenticated()
                 .antMatchers("/usuarios/agregar" ).permitAll()
