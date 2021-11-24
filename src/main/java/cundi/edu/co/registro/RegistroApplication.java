@@ -10,5 +10,5 @@ public class RegistroApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RegistroApplication.class, args);
 	}
-
+	
 }
