@@ -18,14 +18,14 @@ import cundi.edu.co.registro.exception.AuthException;
 
 
 
-
 @Configuration
 @EnableResourceServer
+
 public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
 
 	//Trae todo lo que configuramos en el SecurityConfig
 	@Autowired
-	private ResourceServerTokenServices tokenServices;
+	private ResourceServerTokenServices tokenServices
 	
 	
     @Value("${security.jwt.resource-ids}")
@@ -36,7 +36,7 @@ public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.resourceId(resourceIds).tokenServices(tokenServices);
     }
-    
+        
     //Url que vamos a proteger y como
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -58,6 +58,5 @@ public class ResourceServerConfig  extends ResourceServerConfigurerAdapter{
                 .antMatchers("/token/**" ).permitAll();      
                 
     }    
-    
-    
+        
 }
